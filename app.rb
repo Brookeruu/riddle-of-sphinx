@@ -5,9 +5,10 @@ require('./lib/riddle')
 
 get ('/') do
   game = CurrentGame.new()
-  @riddle0 = game.riddles.values[0]
-  @riddle1 = game.riddles.values[1]
-  @riddle2 = game.riddles.values[2]
+  CurrentGame.random_riddles(game.riddles.keys.length)
+  @riddle0 = game.riddles.values[CurrentGame.value_indexes[0]]
+  @riddle1 = game.riddles.values[CurrentGame.value_indexes[1]]
+  @riddle2 = game.riddles.values[CurrentGame.value_indexes[2]]
   erb(:input)
 end
 
@@ -17,7 +18,9 @@ post('/result') do
   game.answers[1] = params.fetch("answer1")
   game.answers[2] = params.fetch("answer2")
 
-  if game.answers_riddle < game.riddles.values.length
+  @test_array = CurrentGame.value_indexes
+
+  if game.answers_riddle(CurrentGame.value_indexes) < game.answers.length
     erb(:failure)
   else
     erb(:success)
