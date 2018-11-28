@@ -42,5 +42,19 @@ class CurrentGame
     @@value_indexes
   end
 
+  def make_hint(num)
+  hint = @riddles.keys[num].split('')
+  hint_array = []
+  # hint_array = Array.new(hint.length)
+  hint.each_with_index do |letter, i|
+    if i!=0
+      letter = "-"
+    end
+    hint_array.push(letter)
+  end
+  hint_array.join
+end
+
+
 
 end
