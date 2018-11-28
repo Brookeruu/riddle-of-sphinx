@@ -7,8 +7,11 @@ get ('/') do
   game = CurrentGame.new()
   CurrentGame.random_riddles(game.riddles.keys.length)
   @riddle0 = game.riddles.values[CurrentGame.value_indexes[0]]
+  @hint0 = game.make_hint(CurrentGame.value_indexes[0])
   @riddle1 = game.riddles.values[CurrentGame.value_indexes[1]]
+  @hint1 = game.make_hint(CurrentGame.value_indexes[1])
   @riddle2 = game.riddles.values[CurrentGame.value_indexes[2]]
+  @hint2 = game.make_hint(CurrentGame.value_indexes[2])
   erb(:input)
 end
 

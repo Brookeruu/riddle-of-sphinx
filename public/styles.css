@@ -1,0 +1,18 @@
+.hint {
+  background: orange;
+  width: 100px;
+  text-align: center;
+}
+
+.hint h4 {
+  font-size: 20px;
+}
+
+.hint p {
+  display: none;
+}
+
+.hint:hover p{
+  display:contents;
+  font-size: 15px;
+}

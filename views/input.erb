@@ -1,17 +1,46 @@
 <h2>Can you answer the riddles of the sphinx?</h2>
 <form class="form-group" action="/result" method="post">
-  <div class="riddleLabelInput">
-  <label for="riddle0"><%= @riddle0 %></label><br>
-  <input type="text" name="answer0" placeholder="First answer">
-</div>
-<div class="riddleLabelInput">
-  <label for="riddle1"><%= @riddle1 %></label><br>
-  <input type="text" name="answer1" placeholder="Second answer">
-</div>
-<div class="riddleLabelInput">
-  <label for="riddle2"><%= @riddle2 %></label><br>
-  <input type="text" name="answer2" placeholder="Third answer">
-</div>
+
+
+  <div class="riddleLabelInput row">
+    <div class="col-md-9">
+      <label for="riddle0"><%= @riddle0 %></label><br>
+      <input type="text" name="answer0" placeholder="First answer">
+    </div>
+    <div class="col-md-3">
+      <div class="hint" id="question-0-hint">
+        <h4 class="hint-title">Hint</h4>
+        <p> <%= @hint0 %> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="riddleLabelInput row">
+    <div class="col-md-9">
+      <label for="riddle1"><%= @riddle1 %></label><br>
+      <input type="text" name="answer1" placeholder="Second answer">
+    </div>
+    <div class="col-md-3">
+      <div class="hint" id="question-1-hint">
+        <h4 class="hint-title">Hint</h4>
+        <p> <%= @hint1 %> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="riddleLabelInput row">
+    <div class="col-md-9">
+      <label for="riddle2"><%= @riddle2 %></label><br>
+      <input type="text" name="answer2" placeholder="Third answer">
+    </div>
+    <div class="col-md-3">
+      <div class="hint" id="question-2-hint">
+        <h4 class="hint-title">Hint</h4>
+        <p> <%= @hint2 %> </p>
+      </div>
+    </div>
+  </div>
+
 <button type="submit" name="button">Test my knowledge!</button>
 <% @value_indexes %>
 
